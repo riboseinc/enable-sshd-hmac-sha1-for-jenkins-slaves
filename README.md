@@ -1,1 +1,0 @@
-# enable-sshd-hmac-sha1-for-jenkins-slaves

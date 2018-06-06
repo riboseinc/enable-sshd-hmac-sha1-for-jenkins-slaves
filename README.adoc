@@ -1,0 +1,29 @@
+= enable-sshd-hmac-sha1-for-jenkins-slaves.sh
+
+
+== Description
+
+The Jenkins SSH client (Java SSH) does not support the MACs that are configured by default in sshd on RHEL/CentOS 7.
+
+Thus sshd (e.g.: on a Jenkins slave) will present the following error when connected by the Jenkins server:
+
+```console
+Jan 17 01:12:16 ip-10-0-213-151 sshd[1221]: fatal: no matching mac found:
+    client hmac-sha1-96,hmac-sha1,hmac-md5-96,hmac-md5
+    server hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
+    [preauth]
+```
+
+This script adds `hmac-sha1` to `/etc/ssh/sshd_config` and restarts `sshd`. 
+
+
+== Usage
+
+```sh
+sudo ./enable-sshd-hmac-sha1-for-jenkins-slaves.sh
+```
+
+
+== Contributions
+
+Feel free to open an issue or to send a pull request.
