@@ -5,7 +5,7 @@
 
 The Jenkins SSH client (Java SSH) does not support the MACs that are configured by default in sshd on RHEL/CentOS 7.
 
-Thus sshd on a Jenkins slave will present the following error when connected to by the Jenkins server:
+`sshd` on a Jenkins slave will present the following error when connected to by the Jenkins server:
 
 ```console
 Jan 17 01:12:16 ip-10-0-213-151 sshd[1221]: fatal: no matching mac found:
